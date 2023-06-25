@@ -1,0 +1,110 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+	background-color: #fff;
+	color: #333;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.all-container {
+  display: flex;
+  height: 100%;
+}
+
+nav {
+  flex: 0 1 300px;
+  background-color: #ddd;
+  padding: 0.5rem;
+}
+
+main {
+  flex: 1;
+}
+
+main > section {
+  position: relative;
+  width: 620px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.user-input-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.user-input-area {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #d9d9e3;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  margin: 1.5rem;
+  padding: 1.2rem;
+  border-radius: 32px;
+}
+
+#user-input-button-container {
+  position: absolute;
+  display: flex;
+  right: 2.4rem;
+  bottom: 2.3rem;
+}
+
+.user-input-area button {
+  background-color: deepskyblue;
+  border: none;
+  border-radius: 9999px;
+  width: auto;
+  padding: 0.5rem;
+}
+
+#send-message {
+  margin-right: 0.5rem;
+}
+
+.user-input-area button svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+
+#user-input-text {
+  border: none;
+  resize: none;
+  flex: 1;
+  min-height: 1.2rem;
+  max-height: 100px;
+  margin-right: 4.5rem;
+}
+
+#user-input-text:focus {
+  border: none;
+  outline: none;
+}
