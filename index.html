@@ -11,25 +11,42 @@
 <body>
   <div class="all-container">
     <nav>
-      <h2>Welcome to SmallTalk!</h2>
-      <p>Please enter your API keys below to get started.</p>
-      <form>
-        <p>
-          <label for="openai-key">
-            <span>OpenAI API Key:</span>
-          </label>
-          <input type="password" id="openai-key" name="openai-key" required>
-        </p>
-        <p>
-          <label for="azure-key">
-            <span>Azure API Key:</span>
-          </label>
-          <input type="password" id="azure-key" name="azure-key">
-        </p>
-        <p>
-          <button>Save locally</button>
-        </p>
-      </form>
+      <div class="nav-div-name">
+        <div class="nav-div-logo">
+          <svg fill="#000000" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M23,26a1,1,0,0,1-1,1H8c-.22,0-.43.2-.61.33L4,30V14a1,1,0,0,1,1-1H8.86V11H5a3,3,0,0,0-3,3V32a1,1,0,0,0,.56.89,1,1,0,0,0,1-.1L8.71,29H22.15A2.77,2.77,0,0,0,25,26.13V25H23Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M31,4H14a3,3,0,0,0-3,3V19a3,3,0,0,0,3,3H27.55l4.78,3.71a1,1,0,0,0,1,.11,1,1,0,0,0,.57-.9V7A3,3,0,0,0,31,4ZM32,22.94,28.5,20.21a1,1,0,0,0-.61-.21H14a1,1,0,0,1-1-1V7a1,1,0,0,1,1-1H31A1.1,1.1,0,0,1,32,7.06Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        SmallTalk
+      </div>
+      <div class="nav-div">Welcome to SmallTalk (TBD 😅)! This is where you get to practice your foreign or second language skills with an AI.</div>
+      <div class="nav-div">Please enter your API settings below to get started.</div>
+      <div class="nav-div">
+        <div class="nav-div-heading">▶ OpenAI</div>
+        <div class="nav-div-labeled-input">
+          <label for="openai-key">API Key</label>
+          <input type="password" id="openai-key" name="openai-key" placeholder="sk-xxxxxxx">
+        </div>
+        <div class="nav-div-labeled-input">
+          <label for="openai-model">Model</label>
+          <input type="text" id="openai-model" name="openai-model" placeholder="gpt-3.5-turbo-0613">
+        </div>
+      </div>
+      <div class="nav-div">
+        <div class="nav-div-heading">▶ Azure Speech</div>
+        <div class="nav-div-labeled-input">
+          <label for="azure-key">API Key</label>
+          <input type="password" id="azure-key" name="azure-key" placeholder="xxxxxxxxxx">
+        </div>
+        <div class="nav-div-labeled-input">
+          <label for="azure-region">Region</label>
+          <input type="text" id="azure-region" name="azure-region" placeholder="eastasia">
+        </div>
+      </div>
+      <div class="nav-div">
+        <div class="nav-div-button">
+          <button class="solid-button">Save Locally</button>
+        </div>
+      </div>
     </nav>
 
     <main>
@@ -37,25 +54,23 @@
         <div class="chat-container">
           <div class="chat-line">messages</div>
           <div class="chat-line">messages</div>
-          <div class="chat-line">messages</div>
+          <div class="chat-line">中文消息</div>
           <div class="chat-line">messages</div>
         </div>
         <div class="user-input-container">
           <div class="user-input-area">
             <textarea id="user-input-text" rows="1" placeholder="Type your message..." oninput="autoGrow(this)"></textarea>
             <div id="user-input-button-container">
-              <button id="send-message">
-                <svg viewBox="4 4 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99811 10.2467L7.43298 11.0077C7.70983 11.4922 7.84825 11.7344 7.84825 12C7.84825 12.2656 7.70983 12.5078 7.43299 12.9923L7.43298 12.9923L6.99811 13.7533C5.75981 15.9203 5.14066 17.0039 5.62348 17.5412C6.1063 18.0785 7.24961 17.5783 9.53623 16.5779L15.8119 13.8323C17.6074 13.0468 18.5051 12.654 18.5051 12C18.5051 11.346 17.6074 10.9532 15.8119 10.1677L9.53624 7.4221C7.24962 6.42171 6.1063 5.92151 5.62348 6.45883C5.14066 6.99615 5.75981 8.07966 6.99811 10.2467Z" fill="#fff"></path>
+              <button id="send-message" class="solid-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="send-alt" class="icon glyph" fill="#fff">
+                  <path d="M21.88,4.73,16.2,20.65A2,2,0,0,1,14.3,22h0a2,2,0,0,1-1.9-1.31l-2.12-5.52,1.54-1.54,2.49-2.49a1,1,0,1,0-1.42-1.42l-2.49,2.49L8.82,13.76,3.31,11.63a2,2,0,0,1,0-3.83L19.27,2.12a2,2,0,0,1,2.61,2.61Z"></path>
                 </svg>
               </button>
-              <button>
+              <button class="solid-button">
                 <svg viewBox="2 2 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <path d="M12 17V21M12 21H9M12 21H15" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <rect x="10" y="3" width="4" height="10" rx="2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
-                    <path d="M17.7378 12.7542C17.3674 13.9659 16.6228 15.0293 15.6109 15.7918C14.599 16.5544 13.3716 16.977 12.1047 16.9991C10.8378 17.0212 9.59647 16.6417 8.55854 15.9149C7.52061 15.1881 6.73941 14.1515 6.32689 12.9534" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </g>
+                  <path d="M12 17V21M12 21H9M12 21H15" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <rect x="10" y="3" width="4" height="10" rx="2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff"></rect>
+                  <path d="M17.7378 12.7542C17.3674 13.9659 16.6228 15.0293 15.6109 15.7918C14.599 16.5544 13.3716 16.977 12.1047 16.9991C10.8378 17.0212 9.59647 16.6417 8.55854 15.9149C7.52061 15.1881 6.73941 14.1515 6.32689 12.9534" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </button>
             </div>
