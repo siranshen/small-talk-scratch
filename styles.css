@@ -131,28 +131,67 @@ main {
 
 main > section {
   position: relative;
-  width: 620px;
   height: 100%;
   margin: 0 auto;
+}
+
+.chat-container {
+	padding-top: 1rem;
+  height: 100%;
+	overflow: auto;
+}
+
+.chat-area {
+  width: 650px;
+	margin: 0 auto;
+}
+
+.chat-line {
+	border: 1px solid rgb(223,223,224);
+	border-radius: 10px;
+	padding: 1rem 1.5rem;
+	margin-bottom: 1rem;
+	max-width: 75%;
+	clear: both;
+}
+
+.ai-chat-line {
+	border-bottom-left-radius: 0;
+	float: left;
+}
+
+.user-chat-line {
+	border-bottom-right-radius: 0;
+	float: right;
+}
+
+.chat-filler {
+	clear: both;
+	height: 7.5rem;
 }
 
 /** User Input **/
 
 .user-input-container {
-  width: 100%;
+	background: linear-gradient(to top, #fff, #fff 50%, rgba(255,255,255,0));
+  width: calc(100% - 2 * 1.2rem);
   position: absolute;
-  bottom: 1em;
+  bottom: 0;
+	margin: 0 1.2rem;
+	padding: 2rem 0 1.5rem;
 }
 
 .user-input-area {
+	position: relative;
+  width: 650px;
+	margin: 0 auto;
+  background-color: #fff;
   display: flex;
   align-items: stretch;
   border: 1px solid #d9d9e3;
-  border-radius: 16px;
+  border-radius: 9999px;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
-  margin: 1rem;
   padding: 1.25rem;
-  border-radius: 32px;
 }
 
 .user-input-area:hover {
@@ -162,8 +201,8 @@ main > section {
 #user-input-button-container {
   position: absolute;
   display: flex;
-  right: calc(1.85rem + 1px);
-  bottom: calc(1.85rem + 1px);
+  right: calc(0.85rem + 1px);
+  bottom: calc(0.8rem + 1px);
 }
 
 .user-input-area button {
@@ -184,7 +223,7 @@ main > section {
   border: none;
   resize: none;
   flex: 1;
-  min-height: 1rem;
+  line-height: 1.2rem;
   max-height: 100px;
   margin-right: 4.75rem;
 }
