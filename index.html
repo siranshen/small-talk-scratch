@@ -2,56 +2,71 @@
 <html lang="en-us">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Small Talk</title>
-  <link href="styles.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Small Talk</title>
+	<link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-  <div class="all-container">
-    <nav>
-      <div class="nav-div-name">
-        <div class="nav-div-logo">
-          <svg fill="#000000" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M23,26a1,1,0,0,1-1,1H8c-.22,0-.43.2-.61.33L4,30V14a1,1,0,0,1,1-1H8.86V11H5a3,3,0,0,0-3,3V32a1,1,0,0,0,.56.89,1,1,0,0,0,1-.1L8.71,29H22.15A2.77,2.77,0,0,0,25,26.13V25H23Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M31,4H14a3,3,0,0,0-3,3V19a3,3,0,0,0,3,3H27.55l4.78,3.71a1,1,0,0,0,1,.11,1,1,0,0,0,.57-.9V7A3,3,0,0,0,31,4ZM32,22.94,28.5,20.21a1,1,0,0,0-.61-.21H14a1,1,0,0,1-1-1V7a1,1,0,0,1,1-1H31A1.1,1.1,0,0,1,32,7.06Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        SmallTalk
-      </div>
-      <div class="nav-div">Welcome to SmallTalk (TBD 😅)! This is where you get to practice your foreign or second language skills with an AI.</div>
-      <div class="nav-div">Please enter your API settings below to get started.</div>
-      <div class="nav-div">
-        <div class="nav-div-heading">▶ OpenAI</div>
-        <div class="nav-div-labeled-input">
-          <label for="openai-key">API Key</label>
-          <input type="password" id="openai-key" name="openai-key" placeholder="sk-xxxxxxx">
-        </div>
-        <div class="nav-div-labeled-input">
-          <label for="openai-model">Model</label>
-          <input type="text" id="openai-model" name="openai-model" placeholder="gpt-3.5-turbo-0613">
-        </div>
-      </div>
-      <div class="nav-div">
-        <div class="nav-div-heading">▶ Azure Speech</div>
-        <div class="nav-div-labeled-input">
-          <label for="azure-key">API Key</label>
-          <input type="password" id="azure-key" name="azure-key" placeholder="xxxxxxxxxx">
-        </div>
-        <div class="nav-div-labeled-input">
-          <label for="azure-region">Region</label>
-          <input type="text" id="azure-region" name="azure-region" placeholder="eastasia">
-        </div>
-      </div>
-      <div class="nav-div">
-        <div class="nav-div-button">
-          <button class="solid-button">Save Locally</button>
-        </div>
-      </div>
-    </nav>
+	<div class="all-container">
+		<section class="nav-container">
+			<nav>
+				<div class="nav-div-name">
+					<div class="nav-div-logo">
+						<svg fill="#000000" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							<path d="M23,26a1,1,0,0,1-1,1H8c-.22,0-.43.2-.61.33L4,30V14a1,1,0,0,1,1-1H8.86V11H5a3,3,0,0,0-3,3V32a1,1,0,0,0,.56.89,1,1,0,0,0,1-.1L8.71,29H22.15A2.77,2.77,0,0,0,25,26.13V25H23Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+							<path d="M31,4H14a3,3,0,0,0-3,3V19a3,3,0,0,0,3,3H27.55l4.78,3.71a1,1,0,0,0,1,.11,1,1,0,0,0,.57-.9V7A3,3,0,0,0,31,4ZM32,22.94,28.5,20.21a1,1,0,0,0-.61-.21H14a1,1,0,0,1-1-1V7a1,1,0,0,1,1-1H31A1.1,1.1,0,0,1,32,7.06Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+						</svg>
+					</div>
+					SmallTalk
+				</div>
+				<div class="nav-div">Welcome to SmallTalk (TBD 😅)! This is where you get to practice your foreign or second language skills with an AI.</div>
+				<div class="nav-div">Please enter your API settings below to get started.</div>
+				<div class="nav-div">
+					<div class="nav-div-heading">▶ OpenAI</div>
+					<div class="nav-div-labeled-input">
+						<label for="openai-key">API Key</label>
+						<input type="password" id="openai-key" name="openai-key" placeholder="sk-xxxxxxx">
+					</div>
+					<div class="nav-div-labeled-input">
+						<label for="openai-model">Model</label>
+						<input type="text" id="openai-model" name="openai-model" placeholder="gpt-3.5-turbo-0613">
+					</div>
+				</div>
+				<div class="nav-div">
+					<div class="nav-div-heading">▶ Azure Speech</div>
+					<div class="nav-div-labeled-input">
+						<label for="azure-key">API Key</label>
+						<input type="password" id="azure-key" name="azure-key" placeholder="xxxxxxxxxx">
+					</div>
+					<div class="nav-div-labeled-input">
+						<label for="azure-region">Region</label>
+						<input type="text" id="azure-region" name="azure-region" placeholder="eastasia">
+					</div>
+				</div>
+				<div class="nav-div">
+					<div class="nav-div-button">
+						<button class="solid-button">Save Locally</button>
+					</div>
+				</div>
+			</nav>
+		</section>
 
-    <main>
-      <section>
-        <div class="chat-container">
+		<section class="main-container">
+			<header>
+				<button class="header-nav-toggle-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-bar-right">
+						<path d="M20 12l-10 0"></path>
+						<path d="M20 12l-4 4"></path>
+						<path d="M20 12l-4 -4"></path>
+						<path d="M4 4l0 16"></path>
+					</svg>
+				</button>
+				<div>Practicing free talk 💬</div>
+			</header>
+			<main>
+				<div class="chat-container">
 					<div class="chat-area">
 						<div class="chat-line ai-chat-line">messages</div>
 						<div class="chat-line user-chat-line">messages</div>
@@ -62,43 +77,43 @@
 						<div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
 						<div class="chat-line user-chat-line">messages messages messages</div>
 						<div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
-						<div class="chat-line user-chat-line">messages messages messages</div>
+						<div id="test" class="chat-line user-chat-line">测</div>
 						<div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
 						<div class="chat-line user-chat-line">messages messages messages</div>
 						<div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
 						<div class="chat-line user-chat-line">messages messages messages</div>
 						<div class="chat-filler"></div>
 					</div>
-        </div>
-        <div class="user-input-container">
-          <div class="user-input-area">
-            <textarea id="user-input-text" rows="1" placeholder="Type your message..." oninput="autoGrow(this)"></textarea>
-            <div id="user-input-button-container">
-              <button id="send-message" class="solid-button">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="send-alt" class="icon glyph" fill="#fff">
-                  <path d="M21.88,4.73,16.2,20.65A2,2,0,0,1,14.3,22h0a2,2,0,0,1-1.9-1.31l-2.12-5.52,1.54-1.54,2.49-2.49a1,1,0,1,0-1.42-1.42l-2.49,2.49L8.82,13.76,3.31,11.63a2,2,0,0,1,0-3.83L19.27,2.12a2,2,0,0,1,2.61,2.61Z"></path>
-                </svg>
-              </button>
-              <button class="solid-button">
-                <svg viewBox="2 2 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 17V21M12 21H9M12 21H15" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  <rect x="10" y="3" width="4" height="10" rx="2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff"></rect>
-                  <path d="M17.7378 12.7542C17.3674 13.9659 16.6228 15.0293 15.6109 15.7918C14.599 16.5544 13.3716 16.977 12.1047 16.9991C10.8378 17.0212 9.59647 16.6417 8.55854 15.9149C7.52061 15.1881 6.73941 14.1515 6.32689 12.9534" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
+				</div>
+				<div class="user-input-container">
+					<div class="user-input-area">
+						<textarea id="user-input-text" rows="1" placeholder="Type your message..." oninput="autoGrow(this)"></textarea>
+						<div id="user-input-button-container">
+							<button id="send-message" class="solid-button">
+								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="send-alt" class="icon glyph" fill="#fff">
+									<path d="M21.88,4.73,16.2,20.65A2,2,0,0,1,14.3,22h0a2,2,0,0,1-1.9-1.31l-2.12-5.52,1.54-1.54,2.49-2.49a1,1,0,1,0-1.42-1.42l-2.49,2.49L8.82,13.76,3.31,11.63a2,2,0,0,1,0-3.83L19.27,2.12a2,2,0,0,1,2.61,2.61Z"></path>
+								</svg>
+							</button>
+							<button class="solid-button">
+								<svg viewBox="2 2 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 17V21M12 21H9M12 21H15" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+									<rect x="10" y="3" width="4" height="10" rx="2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff"></rect>
+									<path d="M17.7378 12.7542C17.3674 13.9659 16.6228 15.0293 15.6109 15.7918C14.599 16.5544 13.3716 16.977 12.1047 16.9991C10.8378 17.0212 9.59647 16.6417 8.55854 15.9149C7.52061 15.1881 6.73941 14.1515 6.32689 12.9534" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</main>
+		</section>
+	</div>
 
-  <script>
-    function autoGrow(element) {
-      element.style.height = "1px";
-      element.style.height = (element.scrollHeight) + "px";
-    }
-  </script>
+	<script>
+		function autoGrow(element) {
+			element.style.height = "1px";
+			element.style.height = (element.scrollHeight) + "px";
+		}
+	</script>
 </body>
 
 </html>
