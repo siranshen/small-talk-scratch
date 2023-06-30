@@ -26,7 +26,6 @@ select,
 textarea {
   font-family: inherit;
   font-size: 100%;
-  width: 150px;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -64,7 +63,6 @@ input {
 /** Navigation **/
 
 .nav-container {
-  /*	display: none;*/
   flex: 0 1 300px;
   position: fixed;
   top: 0;
@@ -73,21 +71,63 @@ input {
   height: 100%;
 }
 
-nav {
-  max-width: 300px;
-  height: 100%;
+.overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 1024px) {
   .nav-container {
     display: flex;
-    position: static;
+    position: inherit;
+  }
+  .overlay {
+    display: none;
+  }
+}
+
+.fade {
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.5s, height 0.1s 0.5s;
+}
+
+.fade.faded {
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.slide {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.5s;
+}
+
+.slide.slided {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.5s;
+}
+
+@media (min-width: 1024px) {
+  .slide {
+    transform: translate3d(0, 0, 0);
   }
 }
 
 nav {
+  position: relative;
+  z-index: 11;
+  max-width: 300px;
+  height: 100%;
   background-color: rgb(244, 244, 245);
+  border-right: 1px solid rgb(233, 233, 234);
   padding: 1rem;
+  display: flex;
   flex-direction: column;
   overflow: auto;
 }
@@ -119,6 +159,10 @@ nav {
   font-weight: 600;
 }
 
+.nav-div-heading::before {
+  content: "▶ ";
+}
+
 .nav-div-labeled-input {
   display: flex;
   align-items: center;
@@ -142,6 +186,30 @@ nav {
   flex: 0 1 90%;
 }
 
+.nav-toggle-button {
+  position: absolute;
+  top: 0.25rem;
+  width: auto;
+  border: none;
+  background: inherit;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+nav > .nav-toggle-button {
+  right: 0;
+}
+
+header > .nav-toggle-button {
+  left: 0;
+}
+
+@media (min-width: 1024px) {
+  .nav-toggle-button {
+    display: none;
+  }
+}
+
 
 /** Main **/
 
@@ -149,8 +217,8 @@ nav {
   flex: 1;
   position: relative;
   height: 100%;
-  overflow: hidden;
   /* Prevents sticky div from jumping */
+  overflow: hidden;
 }
 
 header {
@@ -158,27 +226,22 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
+  border-bottom: 1px solid rgb(233, 233, 234);
   display: flex;
   align-items: center;
   justify-content: space-around;
   font-weight: 500;
 }
 
-.header-nav-toggle-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: auto;
-  border: none;
-  background: inherit;
-  padding: 0.25rem;
+@media (min-width: 1024px) {
+  header {
+    border-bottom: none;
+  }
 }
 
-@media (min-width: 1024px) {
-  .header-nav-toggle-button {
-    display: none;
-  }
+#chat-title::after {
+  content: " 💬";
 }
 
 main {
@@ -279,7 +342,7 @@ main {
   width: auto;
 }
 
-#send-message {
+#send-message-btn {
   margin-right: 0.5rem;
 }
 

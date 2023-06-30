@@ -10,8 +10,17 @@
 
 <body>
   <div class="all-container">
-    <section class="nav-container">
+    <div id="nav-overlay" class="overlay fade" onclick="toggleNav()"></div>
+    <section id="nav-container" class="nav-container slide">
       <nav>
+        <button class="nav-toggle-button" onclick="toggleNav()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-bar-left">
+            <path d="M4 12l10 0"></path>
+            <path d="M4 12l4 4"></path>
+            <path d="M4 12l4 -4"></path>
+            <path d="M20 4l0 16"></path>
+          </svg>
+        </button>
         <div class="nav-div-name">
           <div class="nav-div-logo">
             <svg fill="#000000" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +33,7 @@
         <div class="nav-div">Welcome to SmallTalk (TBD 😅)! This is where you get to practice your foreign or second language skills with an AI.</div>
         <div class="nav-div">Please enter your API settings below to get started.</div>
         <div class="nav-div">
-          <div class="nav-div-heading">▶ OpenAI</div>
+          <div class="nav-div-heading">OpenAI</div>
           <div class="nav-div-labeled-input">
             <label for="openai-key">API Key</label>
             <input type="password" id="openai-key" name="openai-key" placeholder="sk-xxxxxxx">
@@ -35,7 +44,7 @@
           </div>
         </div>
         <div class="nav-div">
-          <div class="nav-div-heading">▶ Azure Speech</div>
+          <div class="nav-div-heading">Azure Speech</div>
           <div class="nav-div-labeled-input">
             <label for="azure-key">API Key</label>
             <input type="password" id="azure-key" name="azure-key" placeholder="xxxxxxxxxx">
@@ -55,15 +64,15 @@
 
     <section class="main-container">
       <header>
-        <button class="header-nav-toggle-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-bar-right">
+        <button class="nav-toggle-button" onclick="toggleNav()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-bar-right">
             <path d="M20 12l-10 0"></path>
             <path d="M20 12l-4 4"></path>
             <path d="M20 12l-4 -4"></path>
             <path d="M4 4l0 16"></path>
           </svg>
         </button>
-        <div>Practicing free talk 💬</div>
+        <div id="chat-title">Practicing free talk</div>
       </header>
       <main>
         <div class="chat-container">
@@ -89,12 +98,12 @@
           <div class="user-input-area">
             <textarea id="user-input-text" rows="1" placeholder="Type your message..." oninput="autoGrow(this)"></textarea>
             <div id="user-input-button-container">
-              <button id="send-message" class="solid-button">
+              <button id="send-message-btn" class="solid-button">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="send-alt" class="icon glyph" fill="#fff">
                   <path d="M21.88,4.73,16.2,20.65A2,2,0,0,1,14.3,22h0a2,2,0,0,1-1.9-1.31l-2.12-5.52,1.54-1.54,2.49-2.49a1,1,0,1,0-1.42-1.42l-2.49,2.49L8.82,13.76,3.31,11.63a2,2,0,0,1,0-3.83L19.27,2.12a2,2,0,0,1,2.61,2.61Z"></path>
                 </svg>
               </button>
-              <button class="solid-button">
+              <button id="mic-btn" class="solid-button">
                 <svg viewBox="2 2 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 17V21M12 21H9M12 21H15" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   <rect x="10" y="3" width="4" height="10" rx="2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff"></rect>
@@ -112,6 +121,14 @@
     function autoGrow(element) {
       element.style.height = "1px";
       element.style.height = (element.scrollHeight) + "px";
+    }
+
+    const sideNav = document.getElementById("nav-container");
+    const navOverlay = document.getElementById("nav-overlay");
+
+    function toggleNav() {
+      sideNav.classList.toggle("slided");
+      navOverlay.classList.toggle("faded");
     }
   </script>
 </body>
