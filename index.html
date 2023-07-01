@@ -10,11 +10,11 @@
 
 <body>
   <div class="all-container">
-    <div id="nav-overlay" class="overlay fade" onclick="toggleNav()"></div>
+    <div id="nav-overlay" class="overlay fade"></div>
     <section id="nav-container" class="nav-container slide">
       <nav>
-        <button class="nav-toggle-button" onclick="toggleNav()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-bar-left">
+        <button class="nav-toggle-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-bar-left">
             <path d="M4 12l10 0"></path>
             <path d="M4 12l4 4"></path>
             <path d="M4 12l4 -4"></path>
@@ -64,8 +64,8 @@
 
     <section class="main-container">
       <header>
-        <button class="nav-toggle-button" onclick="toggleNav()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-bar-right">
+        <button class="nav-toggle-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-bar-right">
             <path d="M20 12l-10 0"></path>
             <path d="M20 12l-4 4"></path>
             <path d="M20 12l-4 -4"></path>
@@ -77,32 +77,46 @@
       <main>
         <div class="chat-container">
           <div class="chat-area">
-            <div class="chat-line ai-chat-line">messages</div>
-            <div class="chat-line user-chat-line">messages</div>
-            <div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
-            <div class="chat-line user-chat-line">messages messages messages</div>
-            <div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
-            <div class="chat-line user-chat-line">messages messages messages</div>
-            <div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
-            <div class="chat-line user-chat-line">messages messages messages</div>
-            <div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
-            <div id="test" class="chat-line user-chat-line">测</div>
-            <div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
-            <div class="chat-line user-chat-line">messages messages messages</div>
-            <div class="chat-line ai-chat-line">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 </div>
-            <div class="chat-line user-chat-line">messages messages messages</div>
+            <div class="chat-line chat-line-ai">
+              <div class="message-container">messages</div>
+            </div>
+            <div class="chat-line chat-line-user">
+              <div class="message-container">messages</div>
+            </div>
+            <div class="chat-line chat-line-ai">
+              <div class="message-container">中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息 中文消息</div>
+            </div>
+            <div class="chat-line chat-line-user">
+              <div class="message-container">messages messages messages
+              </div>
+            </div>
+            <div class="chat-line chat-line-ai">
+              <div class="message-container">
+                <button class="audio-play-btn flex-none">
+                  <svg fill="#333" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M5.92 24.096q0 1.088 0.928 1.728 0.512 0.288 1.088 0.288 0.448 0 0.896-0.224l16.16-8.064q0.48-0.256 0.8-0.736t0.288-1.088-0.288-1.056-0.8-0.736l-16.16-8.064q-0.448-0.224-0.896-0.224-0.544 0-1.088 0.288-0.928 0.608-0.928 1.728v16.16z"></path></svg>
+                </button>
+                <canvas height="48" width="400" class="audio-canvas audio-ai"></canvas>
+              </div>
+              <div class="message-container">messages messages messages messages messages messages messages
+              </div>
+            </div>
+            <div class="chat-line chat-line-user">
+              <div class="message-container">
+                <button class="audio-play-btn flex-none">
+                  <svg fill="#fff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M5.92 24.096q0 1.088 0.928 1.728 0.512 0.288 1.088 0.288 0.448 0 0.896-0.224l16.16-8.064q0.48-0.256 0.8-0.736t0.288-1.088-0.288-1.056-0.8-0.736l-16.16-8.064q-0.448-0.224-0.896-0.224-0.544 0-1.088 0.288-0.928 0.608-0.928 1.728v16.16z"></path></svg>
+                </button>
+                <canvas height="48" width="400" class="audio-canvas audio-user"></canvas>
+              </div>
+              <div class="message-container">messages messages messages messages messages messages messages
+              </div>
+            </div>
             <div class="chat-filler"></div>
           </div>
         </div>
         <div class="user-input-container">
           <div class="user-input-area">
-            <textarea id="user-input-text" rows="1" placeholder="Type your message..." oninput="autoGrow(this)"></textarea>
+            <textarea id="user-input-text" rows="1" placeholder="Type your message..."></textarea>
             <div id="user-input-button-container">
-              <button id="send-message-btn" class="solid-button">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="send-alt" class="icon glyph" fill="#fff">
-                  <path d="M21.88,4.73,16.2,20.65A2,2,0,0,1,14.3,22h0a2,2,0,0,1-1.9-1.31l-2.12-5.52,1.54-1.54,2.49-2.49a1,1,0,1,0-1.42-1.42l-2.49,2.49L8.82,13.76,3.31,11.63a2,2,0,0,1,0-3.83L19.27,2.12a2,2,0,0,1,2.61,2.61Z"></path>
-                </svg>
-              </button>
               <button id="mic-btn" class="solid-button">
                 <svg viewBox="2 2 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 17V21M12 21H9M12 21H15" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -110,6 +124,16 @@
                   <path d="M17.7378 12.7542C17.3674 13.9659 16.6228 15.0293 15.6109 15.7918C14.599 16.5544 13.3716 16.977 12.1047 16.9991C10.8378 17.0212 9.59647 16.6417 8.55854 15.9149C7.52061 15.1881 6.73941 14.1515 6.32689 12.9534" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </button>
+              <button id="options-btn" class="solid-button">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="17" y="2" width="6" height="36" rx="3" fill="#fff"></rect>
+                  <rect x="2" y="17" width="36" height="6" ry="3" fill="#fff"></rect>
+                </svg>
+              </button>
+              <div id="options-tooltip" class="hidden">
+                <button><span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 7C6.44772 7 6 7.44772 6 8C6 8.55228 6.44772 9 7 9H13C13.5523 9 14 8.55228 14 8C14 7.44772 13.5523 7 13 7H7Z" fill="#000000"></path> <path d="M6 12C6 11.4477 6.44772 11 7 11H13C13.5523 11 14 11.4477 14 12C14 12.5523 13.5523 13 13 13H7C6.44772 13 6 12.5523 6 12Z" fill="#000000"></path> <path d="M7 15C6.44772 15 6 15.4477 6 16C6 16.5523 6.44772 17 7 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H7Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.625 3H7.03369C7.71014 2.37135 8.6473 2 9.62497 2H18.375C20.263 2 22 3.38491 22 5.33333V14.6667C22 16.6151 20.263 18 18.375 18H17.94C17.631 19.697 16.1637 21 14.375 21H5.625C3.60818 21 2 19.3435 2 17.3333V6.66667C2 4.65653 3.60818 3 5.625 3ZM18.375 16H18V6.66667C18 5.62093 17.5648 4.67089 16.8632 4H18.375C19.3864 4 20 4.70443 20 5.33333V14.6667C20 15.2956 19.3864 16 18.375 16ZM5.625 5C4.74233 5 4 5.73129 4 6.66667V17.3333C4 18.2687 4.74233 19 5.625 19H14.375C15.2577 19 16 18.2687 16 17.3333V6.66667C16 5.73129 15.2577 5 14.375 5H5.625Z" fill="#000000"></path></svg></span>Show text</button>
+                <button><span><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></span>Clear talk</button>
+              </div>
             </div>
           </div>
         </div>
@@ -118,18 +142,46 @@
   </div>
 
   <script>
-    function autoGrow(element) {
-      element.style.height = "1px";
-      element.style.height = (element.scrollHeight) + "px";
-    }
+    const userInputTextArea = document.getElementById("user-input-text");
+    userInputTextArea.oninput = () => {
+      this.style.height = "1px";
+      this.style.height = (this.scrollHeight) + "px";
+    };
+    
+    const optionsBtn = document.getElementById("options-btn");
+    const optionsTooltip = document.getElementById("options-tooltip");
+    optionsBtn.onclick = () => {
+      optionsBtn.classList.toggle("open");
+      optionsTooltip.classList.toggle("hidden");
+    };
 
     const sideNav = document.getElementById("nav-container");
     const navOverlay = document.getElementById("nav-overlay");
+    const navToggleBtns = [...document.getElementsByClassName("nav-toggle-button")]
+    
+    navOverlay.onclick = toggleNav;
+    navToggleBtns.forEach(btn => btn.onclick = toggleNav);
 
     function toggleNav() {
       sideNav.classList.toggle("slided");
       navOverlay.classList.toggle("faded");
     }
+    
+    const canvases = [...document.getElementsByTagName("canvas")];
+    canvases.forEach(canvas => {
+      let isAi = false;
+      if (canvas.className.includes("audio-ai")) {
+        isAi = true;
+      }
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = isAi ? "#333" : "#fff";
+      
+      for (let x = 10; x < 390; x += 10) {
+        const dot = new Path2D();
+        dot.arc(x, 24, 3, 0, 2 * Math.PI);
+        ctx.fill(dot);
+      }
+    })
   </script>
 </body>
 

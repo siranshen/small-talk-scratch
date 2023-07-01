@@ -31,8 +31,15 @@ textarea {
   box-sizing: border-box;
 }
 
-.solid-button {
+button {
   cursor: pointer;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.solid-button {
   background-color: #007aff;
   color: #fff;
   font-weight: 600;
@@ -55,8 +62,9 @@ input {
 }
 
 .all-container {
-  display: flex;
+  min-width: 350px;
   height: 100%;
+  display: flex;
 }
 
 
@@ -94,23 +102,22 @@ input {
 .fade {
   height: 0;
   opacity: 0;
-  transition: opacity 0.5s, height 0.1s 0.5s;
+  transition: opacity 0.25s, height 0.1s 0.25s;
 }
 
 .fade.faded {
   height: 100%;
   opacity: 1;
-  transition: opacity 0.5s;
+  transition: opacity 0.25s;
 }
 
 .slide {
   transform: translate3d(-100%, 0, 0);
-  transition: transform 0.5s;
+  transition: transform 0.25s;
 }
 
 .slide.slided {
   transform: translate3d(0, 0, 0);
-  transition: transform 0.5s;
 }
 
 @media (min-width: 1024px) {
@@ -193,7 +200,11 @@ nav {
   border: none;
   background: inherit;
   padding: 0.25rem;
-  cursor: pointer;
+}
+
+.nav-toggle-button svg {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 nav > .nav-toggle-button {
@@ -261,11 +272,11 @@ main {
 }
 
 .chat-line {
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
   margin-bottom: 1rem;
   max-width: 90%;
   clear: both;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 640px) {
@@ -274,17 +285,68 @@ main {
   }
 }
 
-.ai-chat-line {
+.chat-line .message-container {
+  border-radius: 10px;
+  margin-bottom: 0.2rem;
+}
+
+.chat-line .message-container:last-child {
+  margin-bottom: 0;
+}
+
+.chat-line-ai {
   float: left;
-  border-bottom-left-radius: 0;
+  align-items: flex-start;
+}
+
+.chat-line-ai .message-container {
   background-color: rgb(244, 244, 245);
 }
 
-.user-chat-line {
+.chat-line-ai .message-container:first-child {
+  border-top-left-radius: 0;
+}
+
+.chat-line-user {
   float: right;
-  border-bottom-right-radius: 0;
-  background-color: #007aff;
   color: #fff;
+  align-items: flex-end;
+}
+
+.chat-line-user .message-container {
+  background-color: #007aff;
+}
+
+.chat-line-user .message-container:first-child {
+  border-top-right-radius: 0;
+}
+
+.message-container {
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.audio-play-btn {
+  border: none;
+  background: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+.audio-play-btn:hover {
+  opacity: 0.8;
+}
+
+.audio-play-btn svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.audio-canvas {
+  height: 24px;
+  width: 200px;
 }
 
 .chat-filler {
@@ -322,7 +384,7 @@ main {
   display: flex;
   align-items: stretch;
   border: 1px solid #d9d9e3;
-  border-radius: 9999px;
+  border-radius: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
   padding: 1.25rem;
 }
@@ -340,10 +402,6 @@ main {
 
 .user-input-area button {
   width: auto;
-}
-
-#send-message-btn {
-  margin-right: 0.5rem;
 }
 
 .user-input-area button svg {
@@ -364,4 +422,65 @@ main {
 #user-input-text:focus {
   border: none;
   outline: none;
+}
+
+#mic-btn {
+  margin-right: 0.5rem;
+}
+
+#options-btn {
+  transition: transform 0.25s;
+}
+
+#options-btn.open {
+  transform: rotate(45deg);
+}
+
+#options-tooltip {
+  position: absolute;
+  bottom: 100%;
+  right: 1rem;
+  z-index: 20;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #d9d9e3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.75rem;
+
+  transform-origin: bottom right;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+#options-tooltip.hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+#options-tooltip:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+}
+
+#options-tooltip button {
+  border: none;
+  border-radius: 10px;
+  background-color: inherit;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+#options-tooltip button:hover {
+  background-color: rgb(244, 244, 245);
+}
+
+#options-tooltip button > span {
+  height: 1rem;
+  margin-right: 0.5rem;
 }
